@@ -1,52 +1,60 @@
-
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+
 using namespace std;
 int main() {
-  int selection;
+  int num;  
+cout << "(1) Calculate area of a Circle.\n";
+cout << "(2) Calculate area of a Rectangle.\n";
+cout << "(3) Calculate area of a Triangle.\n";
+cout << "(4) Quit.\n";
+cout << "Enter a NUMBER (1 - 4)\n";
+  cin >> num;
 
-  int radius;
-  double pi=3.14;
-  int length;
-  int width;
-  int base;
-  int height;
-  double area;
+if ((num < 0 ) || (num >= 5))
+  cout << "INVALID OPTION\n";
 
-  cout << "Which formula do you want to see?\n\n";
-  cout << "1. Area of a circle\n";
-  cout << "2. Area of a rectangle\n";
-  cout << "3. Area of a triangle\n";
-  cout << "4. None of them!\n";
-  cin >> selection;
-
-  switch (selection) {
+double rad, pi = 3.14159, area;
+double L, W;
+double B, H;
+   
+switch (num) {
   case 1:
-    cout << "Enter value of pi and radius\n";
-    cin >> pi >> radius;
-	  area = radius * radius * pi;
-    cout << area << endl;
-    break;
+    cout << "Enter the radius of the circle: ";
+    cin >> rad;
+    if (rad < 0)
+      cout << "INVALID VALUE\n";
+    else
+      area = pi * pow(rad, 2);
+      cout << setprecision(2) << fixed;
+      cout << "AREA: " << area << endl;
+  return (0);
+
   case 2:
-    cout << "Enter value of Length and width\n";
-    cin >> length >> width;
-     area = length * width;
-    cout << area << endl;
-    break;
+    cout << "Enter the LENGTH and WIDTH of the Rectangle: ";
+    cin >> L >> W;
+  area = L * W;
+    if (area > 0)
+  cout << "AREA: " << area << endl;
+    else
+      cout << "INVALID VALUE\n";
+  return (0);
+
   case 3:
-    cout << "Enter value of base and height\n";
-    cin >> base >> height;
-     area = base * height;
-    cout << area << endl;
-    break;
+    cout << "Enter the BASE and HEIGHT of the Triangle: ";
+    cin >> B >> H;
+  area = B * H * 0.5;
+   if (area > 0)
+  cout << "AREA: " << area << endl;
+    else
+      cout << "INVALID VALUE\n";
+  return (0);
+
   case 4:
-    cout << "Well okay then, good bye!\n";
-    break;
-  default:
-    cout << "Not good with numbers\n";
+    cout << "PROGRAM STOPPED";
+      return (0);
+}
 
-
-
-    
-  }
-
+}
  
